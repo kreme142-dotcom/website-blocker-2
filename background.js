@@ -15,7 +15,12 @@ function updateBlockingRules() {
     const rules = sites.map((site, index) => ({
       id: index + 1,
       priority: 1,
-      action: { type: "block" },
+      action: {
+        type: "redirect",
+        redirect: { extensionPath: "/blocked.html" }
+        // redirect: { url: chrome.runtime.getURL("blocked.html") }
+        // redirect: { extensionPath: "/blocked.html" }
+      },
       condition: {
         urlFilter: site,
         resourceTypes: ["main_frame"]

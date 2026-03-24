@@ -6,7 +6,8 @@
 
   "permissions": [
     "storage",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
   ],
 
   "host_permissions": [
@@ -21,5 +22,12 @@
 
   "action": {
     "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+  {
+    "resources": ["image/404-cat.jpg", "blocked.html"],
+    "matches": ["<all_urls>"]
   }
+]
 }
